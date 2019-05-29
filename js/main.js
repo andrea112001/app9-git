@@ -40,14 +40,14 @@ $('play').click(function (){
 });
 
 //Pause Button
-$('#pause').click(function(){
+$('#pause').click(function (){
 	audio.pause ();
 	$('#pause').hide();
 	$('#play').show();
 });
 
 //Stop Button
-$('#stop').click(function(){
+$('#stop').click(function (){
 	audio.pause ();
 	audio.currentTime = 0;
 	$('#pause').hide();
@@ -61,7 +61,7 @@ $('#playlist li').click(function(){
 	initAudio($(this));
 	$('#play').hide();
 	$('#pause').show();
-	$('#duration').fadein(400);
+	$('#duration').fadeIn(400);
 	audio.play();
 	showDuration();
 });
@@ -81,10 +81,10 @@ function showDuration(){
 		if(s <10){
 			 s = '0' + s;
 		}
-		$('#duration').html(m + '. ' + s);
+		$('#duration').html(m + '.' + s);
 		var value = 0;
 		if (audio.currentTime > 0){
-			value = Math.floor((100/audio.duration) * audio.currentTime);
+			value = Math.floor ((100/audio.duration) * audio.currentTime);
 		}
 		$('#progress').css('width',value+'%');
 	});
